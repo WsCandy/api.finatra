@@ -1,5 +1,6 @@
 package com.finatra.api
 
+import com.finatra.FinatraServer
 import com.google.inject.Stage
 import com.twitter.finagle.http.Status
 import com.twitter.finatra.http.EmbeddedHttpServer
