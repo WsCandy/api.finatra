@@ -1,6 +1,6 @@
 API Finatra
 =====
-[![Build Status](https://travis-ci.org/WsCandy/api.finatra.svg?branch=master)](https://travis-ci.org/WsCandy/api.finatra)
+[![Build Status](https://travis-ci.org/WsCandy/api.finatra.svg?branch=master)](https://travis-ci.org/WsCandy/api.finatra) [![codecov](https://codecov.io/gh/WsCandy/api.finatra/branch/master/graph/badge.svg)](https://codecov.io/gh/WsCandy/api.finatra)
 
 This is a simple boilerplate set up for a web server built on Finatra in Scala. It should be used as a starting point an API service.
 
