@@ -1,3 +1,10 @@
 language: scala
 scala:
  - 2.12.4
+env:
+  global:
+    - CODECOV_TOKEN:=3fbf412d-bf0b-4d8b-88ac-ce15862e4cbf
+script:
+  - sbt coverage test coverageReport
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
