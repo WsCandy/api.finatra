@@ -8,7 +8,7 @@ class FinatraStartUpTest extends FeatureTest {
 
   override val server = new EmbeddedHttpServer(
     twitterServer = new FinatraServer,
-    stage= Stage.PRODUCTION,
+    stage = Stage.PRODUCTION,
     verbose = false
   )
 
