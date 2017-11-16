@@ -6,5 +6,30 @@ env:
     - CODECOV_TOKEN:=3fbf412d-bf0b-4d8b-88ac-ce15862e4cbf
 script:
   - sbt coverage test coverageReport
+  - sbt assembly
+  - mkrdir -p dpl_cd_upload
+  - mv target/scala-2.12/api-finatra-assembly-1.0.0.jar dpl_cd_upload/api-finatra.jar
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on: &2
+      repo: WsCandy/api.finatra
+    bucket: finatra
+    region: eu-west
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: finatra
+    key: api-finatra.jar
+    bundle_type: jar
+    application: ceer
+    deployment_group: ceer-application
+    region: eu-west
+    on: *2
