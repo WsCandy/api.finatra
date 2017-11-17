@@ -3,7 +3,8 @@ os: linux
 files:
   - source: ./
     destination: /home/ubuntu/finatra
-ApplicationStop:
-  - ./stop.sh
-ApplicationStart:
-  - ./start.sh
+hooks:
+  ApplicationStop:
+    - ~/stop.sh
+  ApplicationStart:
+    - ~/start.sh
