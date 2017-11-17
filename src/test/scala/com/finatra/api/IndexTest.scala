@@ -16,7 +16,7 @@ class IndexTest extends FeatureTest {
       withJsonBody = """
         {
           "name" : "Samuel",
-          "friends": ["Giles", "Samuel"]
+          "friends": ["Example", "Endpoint"]
         }"""
     )
   }
