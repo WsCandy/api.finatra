@@ -5,6 +5,6 @@ files:
     destination: /home/ubuntu/finatra
 hooks:
   ApplicationStop:
-    - stop.sh
+    - scripts/stop.sh
   ApplicationStart:
-    - start.sh
+    - scripts/start.sh
