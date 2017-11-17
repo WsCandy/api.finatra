@@ -7,7 +7,7 @@ env:
 script:
   - sbt coverage test coverageReport
   - sbt 'set test in assembly := {}' clean assembly
-  - zip -r api-finatra target/scala-2.12/api-finatra-assembly-1.0.0.jar
+  - zip -r api-finatra *
   - mkdir -p dpl_cd_upload
   - mv api-finatra.zip dpl_cd_upload/api-finatra.zip
 
