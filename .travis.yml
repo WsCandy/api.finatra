@@ -7,7 +7,7 @@ env:
 script:
   - sbt coverage test coverageReport
   - sbt 'set test in assembly := {}' clean assembly
-  - zip -r api-finatra *
+  - zip -r -q api-finatra *
   - mkdir -p dpl_cd_upload
   - mv api-finatra.zip dpl_cd_upload/api-finatra.zip
 
