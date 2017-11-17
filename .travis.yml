@@ -7,8 +7,9 @@ env:
 script:
   - sbt coverage test coverageReport
   - sbt 'set test in assembly := {}' clean assembly
+  - zip -r api-finatra target/scala-2.12/api-finatra-assembly-1.0.0.jar
   - mkdir -p dpl_cd_upload
-  - mv target/scala-2.12/api-finatra-assembly-1.0.0.jar dpl_cd_upload/api-finatra.jar
+  - mv api-finatra.zip dpl_cd_upload/api-finatra.zip
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
@@ -27,8 +28,8 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: finatra
-    key: api-finatra.jar
-    bundle_type: jar
+    key: api-finatra.zip
+    bundle_type: zip
     application: ceer
     deployment_group: ceer-application
     region: eu-west-2
