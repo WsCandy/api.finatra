@@ -4,5 +4,11 @@ files:
   - source: ./
     destination: /home/ubuntu/finatra
 hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-    - scripts/start.sh
+    - location scripts/start.sh
+      timeout 300
+      runas: root
