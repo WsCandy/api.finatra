@@ -1,4 +1,3 @@
 #!/bin/bash
 
-pid=`ps aux | grep api.finatra | awk '{print $2}'`
-kill -9 $pid
+curl -X POST http://localhost:9990/admin/shutdown
