@@ -10,7 +10,7 @@ class IndexController @Inject()
   extends Controller {
 
   get("/") { request: Request =>
-    IndexGetResponse.apply("Blue/Green Deployment Test", Array("Blue", "Green"))
+    IndexGetResponse.apply("Deployment Test", Array("Red", "Green"))
   }
 
   post("/") { indexRequest: IndexPostRequest =>

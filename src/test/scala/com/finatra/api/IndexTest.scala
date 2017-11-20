@@ -15,8 +15,8 @@ class IndexTest extends FeatureTest {
       andExpect = Status.Ok,
       withJsonBody = """
         {
-          "name" : "Blue/Green Deployment Test",
-          "friends": ["Blue", "Green"]
+          "name" : "Deployment Test",
+          "friends": ["Red", "Green"]
         }"""
     )
   }
