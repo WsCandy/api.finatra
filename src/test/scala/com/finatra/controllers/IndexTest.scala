@@ -1,7 +1,6 @@
-package com.finatra.api
+package com.finatra.controllers
 
 import com.finatra.FinatraServer
-import com.google.inject.Stage
 import com.twitter.finagle.http.Status
 import com.twitter.finatra.http.EmbeddedHttpServer
 import com.twitter.inject.server.FeatureTest
@@ -13,7 +12,8 @@ class IndexTest extends FeatureTest {
     server.httpGet(
       path = "/",
       andExpect = Status.Ok,
-      withJsonBody = """
+      withJsonBody =
+        """
         {
           "name" : "Deployment Test",
           "friends": ["Red", "Green"]
@@ -24,7 +24,8 @@ class IndexTest extends FeatureTest {
   test("FinatraServer#perform POST /") {
     server.httpPost(
       path = "/",
-      postBody = """
+      postBody =
+        """
         {
           "id": "10",
           "name": "Samuel"

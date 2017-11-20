@@ -1,6 +1,7 @@
 package com.finatra.controllers
 
-import com.finatra.domain.http.{IndexGetResponse, IndexPostRequest}
+import com.finatra.domain.http.get.IndexGetResponse
+import com.finatra.domain.http.post.IndexPostRequest
 import com.google.inject.{Inject, Singleton}
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
