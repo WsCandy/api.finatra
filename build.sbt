@@ -21,6 +21,7 @@ assemblyMergeStrategy in assembly := {
 }
 
 libraryDependencies ++= Seq(
+  "io.igl" %% "jwt" % "1.2.2",
   "com.twitter" %% "finatra-http" % versions.finatra,
   "com.twitter" %% "finatra-httpclient" % versions.finatra,
   "com.twitter" %% "inject-core" % versions.finatra,
