@@ -3,7 +3,7 @@ scala:
  - 2.12.4
 script:
   - sbt coverage test coverageReport
-  - sbt 'set test in assembly := {}' clean assembly
+  - sbt 'set test in assembly := {}' assembly
   - zip -r -q api-finatra *
   - mkdir -p dpl_cd_upload
   - mv api-finatra.zip dpl_cd_upload/api-finatra.zip
